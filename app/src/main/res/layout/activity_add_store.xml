@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AddStoreActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/ll_title"
+                android:layout_width="match_parent"
+
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_back_share"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="16dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="16dp"
+                    android:src="@drawable/back_left" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="添加服装"
+                    android:textColor="@color/darkblack"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@mipmap/wuxing"></ImageView>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingLeft="10.0sp"
+                    android:paddingRight="10.0sp"
+                    android:text="服装风格"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    />
+
+                <Spinner
+                    android:id="@+id/ev_one"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="right"
+                    android:imeOptions="actionDone"
+                    android:padding="10.0sp"
+                    android:singleLine="true"
+                    android:textSize="16dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@mipmap/wuxing"></ImageView>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingLeft="10.0sp"
+                    android:paddingRight="10.0sp"
+                    android:text="服装种类"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/shape_bg"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/sp_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+
+                        android:gravity="right"
+                        android:imeOptions="actionDone"
+                        android:padding="10.0sp"
+                        android:singleLine="true"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@mipmap/wuxing"></ImageView>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingLeft="10.0sp"
+                    android:paddingRight="10.0sp"
+                    android:text="服装分类"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    />
+                <Spinner
+                    android:id="@+id/ev_four"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+
+                    android:gravity="right"
+                    android:imeOptions="actionDone"
+                    android:padding="10.0sp"
+                    android:singleLine="true"
+                    android:textSize="16dp" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@mipmap/wuxing"></ImageView>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingLeft="10.0sp"
+                    android:paddingRight="10.0sp"
+                    android:text="服装名称"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+              />
+
+                <EditText
+                    android:id="@+id/ev_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/shape_bg"
+                    android:gravity="right"
+                    android:hint="请输入服装名称"
+                    android:imeOptions="actionDone"
+                    android:padding="10.0sp"
+                    android:singleLine="true"
+                    android:textSize="16dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@mipmap/wuxing"></ImageView>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingLeft="10.0sp"
+                    android:paddingRight="10.0sp"
+                    android:text="服装介绍"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                     />
+
+                <EditText
+                    android:id="@+id/ev_threee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/shape_bg"
+                    android:gravity="right"
+                    android:hint="请输入服装介绍"
+                    android:imeOptions="actionDone"
+                    android:padding="10.0sp"
+                    android:singleLine="true"
+                    android:textSize="16dp" />
+
+
+            </LinearLayout>
+
+
+
+            <ImageView
+                android:id="@+id/add_store"
+                android:layout_marginTop="10dp"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/image_bg1"></ImageView>
+
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_login"
+                android:onClick="onClickSaveInfo"
+                android:text="保存"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                tools:ignore="OnClick" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>

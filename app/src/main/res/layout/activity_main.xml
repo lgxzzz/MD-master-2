@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+    <TextView
+        android:background="@color/nearby_grey"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    </android.support.v4.view.ViewPager>
+
+    <RadioGroup
+        android:background="@color/white"
+        android:id="@+id/radioGroup"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <com.lost.administrator.md.widget.MyRadioButton
+            android:id="@+id/rb_home"
+
+            app:drawableTop="@drawable/image_loca1"
+            app:drawableTopHeight="12dp"
+            app:drawableTopWidth="12dp"
+            android:text="首页"
+            style="@style/btn_style"  />
+
+        <com.lost.administrator.md.widget.MyRadioButton
+            android:id="@+id/rb_order"
+            app:drawableTop="@drawable/image_order1"
+            app:drawableTopHeight="12dp"
+            app:drawableTopWidth="12dp"
+            android:text="收藏"
+            style="@style/btn_style"  />
+        <com.lost.administrator.md.widget.MyRadioButton
+            android:id="@+id/rb_mine"
+            app:drawableTop="@drawable/image_my1"
+            app:drawableTopHeight="12dp"
+            app:drawableTopWidth="12dp"
+            android:text="我的"
+            style="@style/btn_style"  />
+
+    </RadioGroup>
+
+
+</LinearLayout>

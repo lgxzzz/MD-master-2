@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.lost.administrator.md.widget.ObservableScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@color/text_grey"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/ll_location1"
+                            android:textColor="@color/white"
+                            android:text="定位"
+                            android:textStyle="bold"
+                            android:textSize="23dp"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:layout_marginLeft="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="30dp"
+                            android:background="@null"/>
+                        <LinearLayout
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:id="@+id/ll_location"
+                                android:layout_width="20dp"
+                                android:layout_height="15dp"
+                                android:background="@drawable/image_location"/>
+
+                            <TextView
+                                android:id="@+id/adress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                ></TextView>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="30dp"
+                            android:background="@null"/>
+
+                        <FrameLayout
+                            android:id="@+id/serrchlay"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/rounded_edittext">
+
+                            <EditText
+                                android:id="@+id/follow_edit"
+                                android:layout_width="278dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:background="@null"
+                                android:drawablePadding="10dp"
+                                android:hint="请输入服装名称/类型/风格搜索"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/gray"
+                                android:textCursorDrawable="@null"
+                                android:textSize="15dp" />
+
+                            <ImageView
+                                android:id="@+id/ll_search_home"
+                                android:layout_width="23dp"
+                                android:layout_height="23dp"
+                                android:background="@drawable/image_search"
+                                android:layout_gravity="right"/>
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <GridView
+                    android:id="@+id/gv_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="106dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:numColumns="4"
+                    android:paddingTop="15dp"></GridView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/nearby_grey" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/nearby_grey"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="2dp"
+                        android:layout_height="18dp"
+                        android:background="@color/mistyrose" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="@string/nearby_store" />
+                </LinearLayout>
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/lv_store"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:scrollbars="none">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </LinearLayout>
+
+        </com.lost.administrator.md.widget.ObservableScrollView>
+
+        <LinearLayout
+            android:id="@+id/search_goods"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/yellow"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/ll_search_goods"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_searchgoods"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/tv_search_goods"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:hint="输入商家或商品名称" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_animation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_horizontal"
+                android:text="正在加载..." />
+
+            <ImageView
+                android:id="@+id/iv_animation"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:src="@drawable/animation_load"></ImageView>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>

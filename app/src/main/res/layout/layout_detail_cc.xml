@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/lll"
+        android:background="@color/yellow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:id="@+id/iv_back_share"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:src="@drawable/back_left"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/tv_order"
+            android:paddingLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="团购详情"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:textColor="@color/brown"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+        <ImageView
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:id="@+id/cc"
+
+            android:src="@drawable/collect_mine"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:visibility="visible"
+        android:orientation="horizontal"
+        android:layout_below="@id/lll"
+        android:id="@+id/radioGroup_order"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <RadioButton
+            android:id="@+id/rb_one"
+            android:background="@drawable/select_btn_login"
+            android:gravity="center"
+            android:text="团购详情"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            />
+        <RadioButton
+            android:id="@+id/rb_two"
+            android:background="@drawable/select_btn_login"
+            android:gravity="center"
+            android:text="购买须知"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            />
+        <RadioButton
+            android:id="@+id/rb_three"
+            android:background="@drawable/select_btn_login"
+            android:gravity="center"
+            android:text="网友点评"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            />
+
+    </RadioGroup>
+    <android.support.v4.view.ViewPager
+        android:visibility="visible"
+        android:id="@+id/viewpager_order"
+        android:layout_below="@+id/radioGroup_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+
+
+
+
+
+
+</RelativeLayout>

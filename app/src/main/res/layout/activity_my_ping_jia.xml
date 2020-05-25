@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_my_ping_jia"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activity.MyPingJiaActivity">
+
+    <LinearLayout
+
+        android:id="@+id/ll_title_myPingJia"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back_myPingJia"
+            android:layout_width="60dp"
+            android:layout_height="56dp"
+            android:padding="20dp"
+            android:src="@drawable/back_left" />
+
+        <TextView
+            android:id="@+id/tv_title_myPingJia"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:text="我的评价"
+            android:textColor="@color/darkblack"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/nearby_grey" />
+    </LinearLayout>
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:paddingLeft="10.0sp"
+        android:paddingRight="10.0sp"
+        android:text="评语"
+        android:textColor="@android:color/black"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/ev_pingyu"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/shape_bg"
+        android:gravity="left"
+        android:hint="请输入评语描述"
+        android:imeOptions="actionDone"
+        android:padding="10.0sp"
+
+        android:textSize="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="评分 :"
+            android:textColor="@color/black"
+            android:textSize="16dp"></TextView>
+
+        <RatingBar
+            android:id="@+id/ratbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:isIndicator="false"
+            android:max="5"
+            android:rating="5"
+            android:stepSize="0.25">
+        </RatingBar>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_login"
+        android:onClick="onClickSaveInfo"
+        android:text="提交"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        tools:ignore="OnClick" />
+
+</LinearLayout>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+   <RelativeLayout
+       android:id="@+id/rl_set_mine"
+       android:background="@drawable/bg_mine1"
+       android:layout_width="match_parent"
+       android:layout_height="150dp">
+       <com.wx.ovalimageview.RoundImageView
+           android:id="@+id/iv_icon_mine"
+           android:layout_marginTop="30dp"
+           android:layout_centerHorizontal="true"
+           android:src="@drawable/mine_image1"
+           android:layout_width="65dp"
+           android:layout_height="65dp" />
+       <TextView
+           android:id="@+id/title"
+           android:textColor="@color/black"
+           android:textSize="15sp"
+
+           android:layout_marginTop="20dp"
+           android:layout_centerHorizontal="true"
+           android:layout_below="@+id/iv_icon_mine"
+           android:layout_width="wrap_content"
+           android:layout_height="20dp"
+           android:text="登录账号" />
+   </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/nearby_grey"/>
+    <LinearLayout
+        android:id="@+id/ll_pingJia_mine"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:src="@drawable/pingjia_mine"
+            android:layout_marginLeft="10dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp" />
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:text="我的评价"
+            android:textColor="@color/black"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"/>
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:src="@drawable/right_mine"
+            android:layout_width="15dp"
+            android:layout_height="15dp" />
+    </LinearLayout>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:background="@color/nearby_grey"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/nearby_grey" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:background="@color/nearby_grey"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:background="@color/nearby_grey"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/nearby_grey"/>
+        <LinearLayout
+            android:id="@+id/ll_help_mine"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:src="@drawable/set"
+                android:layout_marginLeft="10dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp" />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:text="设置"
+                android:textColor="@color/black"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"/>
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:src="@drawable/right_mine"
+                android:layout_width="15dp"
+                android:layout_height="15dp" />
+        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:background="@color/nearby_grey"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <LinearLayout
+            android:id="@+id/ll_more_mine"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="16sp"
+                android:text="退出当前账号"
+                android:textColor="@color/red"
+                android:background="@color/white"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+    </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/nearby_grey"/>
+        <TextView
+            android:id="@+id/tv_aboutus"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@color/indianred"
+            android:text="关于我们"
+            />
+ </LinearLayout>
+</ScrollView>

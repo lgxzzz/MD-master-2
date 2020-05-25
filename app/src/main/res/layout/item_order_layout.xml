@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tv1"
+
+        android:layout_width="match_parent"
+        android:text="账号:123"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/black"
+        android:layout_height="40dp" />
+    <ImageView
+        android:id="@+id/iv_icon_order"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+
+        android:src="@drawable/store"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+
+    <TextView
+        android:id="@+id/tv_state_order"
+        android:text="订单完成"
+        android:textSize="11sp"
+        android:layout_marginTop="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_storeName_order"
+        android:text="秀色可餐"
+        android:textStyle="bold"
+        android:textColor="@color/darkblack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_state_order"
+        android:layout_alignBottom="@+id/tv_state_order"
+        android:layout_alignLeft="@+id/tv2"
+        android:layout_alignStart="@+id/tv2" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/iv_icon_order"
+        android:layout_marginTop="64dp"
+        android:background="@color/nearby_grey"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <TextView
+        android:id="@+id/lv_list_order"
+        android:layout_marginTop="5dp"
+        android:scrollbars="none"
+        android:divider="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2019-10-12 12:23"
+        android:gravity="right"
+        android:layout_below="@+id/tv2"
+        android:layout_alignLeft="@+id/tv2"
+        android:layout_alignStart="@+id/tv2"
+        android:layout_alignRight="@+id/tv2"
+        android:layout_alignEnd="@+id/tv2" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:background="@color/nearby_grey"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:layout_below="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+<LinearLayout
+    android:id="@+id/dasd"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_below="@+id/lv_list_order"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"></TextView>
+    <TextView
+
+        android:text="实付"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_below="@+id/lv_list_order"
+        android:layout_toLeftOf="@+id/button"
+        android:layout_toStartOf="@+id/button" />
+
+    <TextView
+        android:gravity="right"
+        android:maxLines="1"
+        android:textSize="15dp"
+        android:id="@+id/tv_price_order"
+        android:text="￥14.5"
+        android:textStyle="bold"
+        android:textColor="@color/darkblack"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_alignRight="@+id/lv_list_order"
+        android:layout_alignEnd="@+id/lv_list_order" />
+
+</LinearLayout>
+    <Button
+        android:background="#eaeaea"
+        android:textSize="11sp"
+        android:text="再来一单"
+        android:layout_width="55dp"
+        android:layout_height="20dp"
+
+        android:id="@+id/button"
+        android:layout_below="@+id/dasd"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@+id/lv_list_order"
+        android:layout_alignEnd="@+id/lv_list_order" />
+
+</RelativeLayout>

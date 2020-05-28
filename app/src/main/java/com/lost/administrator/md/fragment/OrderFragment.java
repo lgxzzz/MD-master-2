@@ -25,6 +25,7 @@ import com.lost.administrator.md.entity.CollectionBean;
 import com.lost.administrator.md.entity.EventBusBean;
 import com.lost.administrator.md.entity.Store;
 import com.lost.administrator.md.entity.StoreDingDan;
+import com.lost.administrator.md.entity.User;
 import com.lost.administrator.md.utils.CommonAdapter;
 import com.lost.administrator.md.utils.DensityUtils;
 import com.lost.administrator.md.utils.ViewHolder;
@@ -58,7 +59,7 @@ public class OrderFragment extends Fragment {
     List<CollectionBean> list_store;
 
     RecyclerViewCollAdapter recyclerViewCollAdapter;
-
+    User mUser;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.orderfragment_layout, null);
@@ -66,7 +67,12 @@ public class OrderFragment extends Fragment {
         if (!EventBus.getDefault().isRegistered(this)) {//加上判断
             EventBus.getDefault().register(this);
         }
-        list_store = DbSqliteHelper.getInstance(getActivity()).getAllCollection();
+        mUser = DbSqliteHelper.mCurrentUser;
+        if (mUser.getType().equals("商家")){
+            list_store = DbSqliteHelper.getInstance(getActivity()).getAllCollection();
+        }else{
+            list_store = DbSqliteHelper.getInstance(getActivity()).getCollectionsByUser(mUser.getName());
+        }
         lvStore.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         setContentCommonadapter();
         return view;

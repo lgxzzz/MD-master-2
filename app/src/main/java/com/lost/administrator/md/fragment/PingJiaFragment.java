@@ -72,13 +72,13 @@ public class PingJiaFragment extends Fragment {
         user = SharedPrefsUtils.getString(getActivity(), "user");
         String[] args = new String[]{user};
         userBean = DbSqliteHelper.getInstance(getActivity()).findUser(args);
-        initData();
+//        initData();
 
         return view;
     }
 
     private void initData() {
-        mlist = DbSqliteHelper.getInstance(getActivity()).getAllPingJia(user);
+        mlist = DbSqliteHelper.getInstance(getActivity()).getPingJiaByStoreKey(store.getMoney());
 
         adapter = new CommonAdapter<PingJiaBean>(getActivity(), mlist, R.layout.item_mypingjia_layout) {
             @Override
@@ -131,5 +131,11 @@ public class PingJiaFragment extends Fragment {
         intent.putExtras(bundle);
         startActivity(intent);
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initData();
     }
 }

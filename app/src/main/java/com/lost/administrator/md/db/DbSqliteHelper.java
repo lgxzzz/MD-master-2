@@ -25,8 +25,10 @@ import java.util.PriorityQueue;
 public class DbSqliteHelper extends SQLiteOpenHelper {
 
     public DbSqliteHelper(Context ctx) {
-        super(ctx, "MT", null, 1);
+        super(ctx, "MT", null, 2);
     }
+
+    public static User mCurrentUser = new User();
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -37,9 +39,18 @@ public class DbSqliteHelper extends SQLiteOpenHelper {
         //用户收藏数据表
         db.execSQL("CREATE TABLE if not exists usercollect(id integer PRIMARY KEY autoincrement,"
                 + "phone integer,name  text, type text,money text, start text, ends text,bianhao text)");//area-原bianhao
+
         //商品信息数据表
-        db.execSQL("CREATE TABLE if not exists store(id integer PRIMARY KEY autoincrement,"
-                + "name  text, type text,money text, start text, ends text,area text,indexs text)");//area-原bianhao
+        db.execSQL("CREATE TABLE if not exists store(" +
+                "id integer PRIMARY KEY autoincrement,"
+                + "name  text, " +
+                "type text," +
+                "money text, " +
+                "start text, " +
+                "ends text," +
+                "area text," +
+                "indexs text)");//area-原bianhao
+
         //商品订单信息数据表
         db.execSQL("CREATE TABLE if not exists storedingdan(id integer PRIMARY KEY autoincrement,"
                 + "user text,name  text, type text,money text, start text, ends text,bianhao text,time text)");//area-原bianhao
@@ -52,8 +63,15 @@ public class DbSqliteHelper extends SQLiteOpenHelper {
                 + " shopName text,name text, phone text, adress text,picture text,type text,createtime text,isExamine text)");
 
         //商品收藏信息数据表
-        db.execSQL("CREATE TABLE if not exists collection(id integer PRIMARY KEY autoincrement,"
-                + "user text,name  text, type text,money text, start text, ends text,area text)");//area-原bianhao
+        db.execSQL("CREATE TABLE if not exists collection(" +
+                "id integer PRIMARY KEY autoincrement,"
+                + "user text," +
+                "name  text, " +
+                "type text," +
+                "money text, " +
+                "start text, " +
+                "ends text," +
+                "area text)");//area-原bianhao
     }
 
     @Override
@@ -121,6 +139,7 @@ public class DbSqliteHelper extends SQLiteOpenHelper {
             cursor.close();
 
         }
+        mCurrentUser = bean;
         return bean;
     }
 
@@ -337,6 +356,32 @@ public class DbSqliteHelper extends SQLiteOpenHelper {
         return records;
     }
 
+    /**
+     * 通过商品获取评价数据
+     *
+     * @return
+     */
+    public List<PingJiaBean> getPingJiaByStoreKey(String goodName) {
+        List<PingJiaBean> records = new ArrayList<PingJiaBean>();
+        SQLiteDatabase db = getWritableDatabase();
+        if (db != null) {
+            Cursor cursor = db.rawQuery("SELECT * FROM pingjia WHERE goodName = ?", new String[]{goodName});
+            while (cursor.moveToNext()) {
+                PingJiaBean bean = new PingJiaBean();
+                bean.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                bean.setUser(cursor.getString(cursor.getColumnIndex("user")));
+                bean.setGoodName(cursor.getString(cursor.getColumnIndex("goodName")));
+                bean.setComment(cursor.getString(cursor.getColumnIndex("comment")));
+                bean.setRatbar(cursor.getString(cursor.getColumnIndex("ratbar")));
+                bean.setTime(cursor.getString(cursor.getColumnIndex("time")));
+
+
+                records.add(bean);
+            }
+            cursor.close();
+        }
+        return records;
+    }
 
     /**
      * 更新优惠劵订单信息
@@ -506,7 +551,7 @@ public class DbSqliteHelper extends SQLiteOpenHelper {
 
         if (db != null) {
             //注册之前先查询是否重复注册
-            Cursor cursor = db.rawQuery("SELECT * FROM collection WHERE name = ? AND user = ?", new String[]{bean.getName(),bean.getUser()});
+            Cursor cursor = db.rawQuery("SELECT * FROM collection WHERE money = ? AND user = ?", new String[]{bean.getMoney(),bean.getUser()});
             boolean hasUser = false;
             if (cursor.moveToNext()) {
                 hasUser = true;
@@ -559,12 +604,41 @@ public class DbSqliteHelper extends SQLiteOpenHelper {
         return records;
     }
 
+    /**
+     * 获取所有收藏商品数据
+     *
+     * @return
+     */
+    public List<CollectionBean> getCollectionsByUser(String user) {
+        List<CollectionBean> records = new ArrayList<CollectionBean>();
+        SQLiteDatabase db = getWritableDatabase();
+        if (db != null) {
+            Cursor cursor = db.rawQuery("SELECT * FROM collection WHERE user = ?", new String[]{user});
+            while (cursor.moveToNext()) {
+                CollectionBean bean = new CollectionBean();
+                bean.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                bean.setUser(cursor.getString(cursor.getColumnIndex("user")));
 
-    public CollectionBean findColl(String name,String user) {
+                bean.setName(cursor.getString(cursor.getColumnIndex("name")));
+                bean.setType(cursor.getString(cursor.getColumnIndex("type")));
+
+                bean.setMoney(cursor.getString(cursor.getColumnIndex("money")));
+                bean.setprice(cursor.getString(cursor.getColumnIndex("start")));
+                bean.setpicture(cursor.getString(cursor.getColumnIndex("ends")));
+                bean.setBianhao(cursor.getString(cursor.getColumnIndex("area")));//area-原bianhao
+
+                records.add(bean);
+            }
+            cursor.close();
+        }
+        return records;
+    }
+
+    public CollectionBean findColl(String money,String user) {
         CollectionBean bean = new CollectionBean();
         SQLiteDatabase db = getWritableDatabase();
         if (db != null) {
-            Cursor cursor = db.rawQuery("SELECT * FROM collection WHERE name = ? AND user = ?", new String[]{name,user});
+            Cursor cursor = db.rawQuery("SELECT * FROM collection WHERE money = ? AND user = ?", new String[]{money,user});
             if (cursor.moveToNext()) {
                 bean.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 bean.setUser(cursor.getString(cursor.getColumnIndex("user")));

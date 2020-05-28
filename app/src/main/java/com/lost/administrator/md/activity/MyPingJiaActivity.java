@@ -80,7 +80,7 @@ public class MyPingJiaActivity extends AppCompatActivity {
                 }
                 PingJiaBean pingJiaBean = new PingJiaBean();
                 pingJiaBean.setUser(user);
-                pingJiaBean.setGoodName(store.getName());
+                pingJiaBean.setGoodName(store.getMoney());
                 pingJiaBean.setComment(evPingyu.getText().toString());
                 pingJiaBean.setRatbar(rating+"");
                 pingJiaBean.setTime(longToDate());

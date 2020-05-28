@@ -115,7 +115,18 @@
         android:background="@color/white"
         android:orientation="horizontal">
 
-
+        <Button
+            android:id="@+id/btn_take_buy"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bg4"
+            android:text="购买"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            />
         <Button
             android:id="@+id/btn_take_order"
             android:layout_width="match_parent"
@@ -124,7 +135,9 @@
             android:background="@drawable/btn_bg4"
             android:text="收藏"
             android:textColor="@color/white"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:layout_margin="10dp"
+            />
     </LinearLayout>
 
 </RelativeLayout>

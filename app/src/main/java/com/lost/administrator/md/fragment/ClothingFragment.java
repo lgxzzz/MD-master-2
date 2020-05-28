@@ -47,6 +47,8 @@ public class ClothingFragment extends Fragment {
     TextView detail;
     @BindView(R.id.btn_take_order)
     Button btnTakeOrder;
+    @BindView(R.id.btn_take_buy)
+    Button btnTakeBuy;
     @BindView(R.id.bottom_layout)
     LinearLayout bottomLayout;
 
@@ -65,7 +67,7 @@ public class ClothingFragment extends Fragment {
         Glide.with(getActivity()).load(store.getpicture()).into(goodPicture);
         detail.setText(store.getprice());
 
-        final CollectionBean collect = DbSqliteHelper.getInstance(getActivity()).findColl(store.getName(), SharedPrefsUtils.getString(getActivity(), "user"));
+        final CollectionBean collect = DbSqliteHelper.getInstance(getActivity()).findColl(store.getMoney(), SharedPrefsUtils.getString(getActivity(), "user"));
         if (!TextUtils.isEmpty(collect.getName())) {
             btnTakeOrder.setText("已收藏");
             
@@ -74,6 +76,18 @@ public class ClothingFragment extends Fragment {
             btnTakeOrder.setText("收藏");
         
         }
+        if (DbSqliteHelper.mCurrentUser.getType().equals("商家")){
+            btnTakeOrder.setVisibility(View.GONE);
+        }else{
+            btnTakeOrder.setVisibility(View.VISIBLE);
+        }
+
+        btnTakeBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         btnTakeOrder.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -247,4 +247,12 @@ public class HomeUserFragment extends Fragment {//商家
 
         }
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        list_store = DbSqliteHelper.getInstance(getActivity()).getAllStore();
+        listView_store.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+        setContentCommonadapter();
+    }
 }

@@ -38,6 +38,8 @@ public class GoodDetailActivity extends AppCompatActivity {
     TextView tvTotal;
     @BindView(R.id.btn_take_order)
     Button btnTakeOrder;
+    @BindView(R.id.btn_take_buy)
+    Button btnTakeBuy;
     @BindView(R.id.bottom_layout)
     LinearLayout bottomLayout;
     @BindView(R.id.iv_collect1)
